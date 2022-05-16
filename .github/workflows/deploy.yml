@@ -3,9 +3,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-      mkdir www
-      echo "hello world" > www/index.html
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
 
     - uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
