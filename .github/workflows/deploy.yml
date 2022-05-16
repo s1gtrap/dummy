@@ -8,11 +8,19 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Install and Build 🔧
+      - name: Install 📉
+        uses: jetli/wasm-pack-action@v0.3.0
+        with:
+          version: "latest"
+
+      - name: Build 🔧
         run: |
           mkdir -p www/pkg
           echo "hello world" > www/index.html
           echo "derp" > www/pkg/bash.sh
+          ls www/pkg
+          ./build.sh
+          ls www/pkg
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
