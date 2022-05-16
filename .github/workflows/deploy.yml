@@ -1,0 +1,13 @@
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+      mkdir www
+      echo "hello world" > www/index.html
+
+    - uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+        branch: gh-pages
+        folder: build
