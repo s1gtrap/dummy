@@ -14,13 +14,12 @@ jobs:
           version: "latest"
 
       - name: Build 🔧
-        run: |
-          mkdir -p www/pkg
-          echo "hello world" > www/index.html
-          echo "derp" > www/pkg/bash.sh
-          ls www/pkg
-          ./build.sh
-          ls www/pkg
+        run: mkdir -p www/pkg
+      - run: echo "hello world" > www/index.html
+      - run: echo "derp" > www/pkg/bash.sh
+      - run: ls www/pkg
+      - run: ./build.sh
+      - run: ls www/pkg
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
