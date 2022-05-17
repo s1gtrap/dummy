@@ -19,7 +19,7 @@ jobs:
       - run: echo "derp" > www/pkg/bash.sh
       - run: tree
       - run: ls www/pkg
-      - run: wasm-pack build --out-dir www/pkg --target no-modules
+      - run: wasm-pack build --out-dir www/pkg2 --target no-modules
       - run: tree
       - run: ls www/pkg
 
